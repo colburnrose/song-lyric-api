@@ -6,7 +6,6 @@ function getLyrics(artist, title) {
   fetch(URL)
     .then((response) => {
       if (response.ok) {
-        console.log(response);
         return response.json();
       } else {
         throw new Error(
@@ -34,7 +33,6 @@ function displayResults(response) {
 function watchForm() {
   $("form").submit((e) => {
     e.preventDefault();
-    console.log("clicked");
     let artist = $(".js-query-artist").val();
     let title = $(".js-query-title").val();
     getLyrics(artist, title);
